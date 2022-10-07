@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Is "a" a multiple of "b"?</title>
+</head>
+
+<body>
+<br>
+<button type="button" onclick="showMessage1();"> Input a </button>
+<button type="button" onclick="showMessage2();"> Input b </button>
+<button type="button" onclick="showMessage3();"> Check </button>
+
+<script>
+    let a;
+    let b;
+    function showMessage1 () {
+        a = prompt('Input two numbers a');
+    }
+
+    function showMessage2 () {
+         b = prompt('Input two numbers b');
+    }
+
+    function showMessage3 () {
+        let m = a%b;
+        console.log(m);
+        if (m == 0) {
+            alert("a is a multiple of b");
+        } else {
+            alert('a is not a multiple of b');
+        }
+    }
+
+</script>
+</body>
+
+</html>
