@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đăng ký người dùng</title>
+    <style>
+        input[type='radio']:checked:after {
+            background-color: #ffa500;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+<form method="post" action="http://demo.codegym.vn/6/registration_form/register.php" />
+    <p><b>Họ và tên:</b> <br>
+    <input type="text" name="Name" />
+    </p>
+
+    <p><b>Email:</b> <br>
+       <input type="email" name="email" />
+    </p>
+
+    <p><b>Số điện thoại:</b> <br>
+       <input type="text" name="phone" />
+    </p>
+
+    <p><b>Giới tính:</b> <br>
+       <input type="radio" checked name="gender" /> Nam
+       <input type="radio" name="gender" /> Nữ
+    </p>
+
+    <p>
+        <input type="button" name="Submit" value="Đăng ký"/>
+    </p>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form sở thích</title>
+</head>
+
+<body>
+<h2 style="color: aliceblue; background-color: orangered; text-align: center">SỞ THÍCH CỦA BẠN</h2>
+<form method="post" />
+    <p style="color: blue">Họ và tên
+    <input type="text" name="yourname" />
+    </p>
+
+    <p style="color: blue">Email
+    <input type="email" name="email" />
+    </p>
+
+    <p style="color: blue">Sở thích
+    <table style="color: orange">
+    <tr>
+         <td><input type="checkbox" name="hobby" /> Thể thao </td>
+         <td><input type="checkbox" name="hobby" /> Âm nhạc </td>
+         <td><input type="checkbox" name="hobby" /> Đọc sách </td>
+    </tr>
+
+    <tr>
+        <td><input type="checkbox" name="hobby" /> Lướt web </td>
+        <td><input type="checkbox" name="hobby" /> Chơi game </td>
+        <td><input type="checkbox" name="hobby" /> Điện ảnh </td>
+
+    <tr>
+        <td><input type="checkbox" name="hobby" /> Du lịch </td>
+    </tr>
+
+    </table>
+    </p>
+
+<p>
+    <input type="button" name="SubmitForm" value="Gửi thông tin"/>
+    <input type="reset" name="ResetForm" value="Nhập lại"/>
+</p>
+<hr>
+<hr>
+
+<h2 style="color: blue; background-color: palegreen; text-align: left">ĐĂNG KÝ HỌC VIÊN</h2>
+<form method="post" />
+<p style="color: blue">Họ và tên
+    <input type="text" name="yourname" />
+</p>
+
+<p style="color: blue">Ngày sinh
+    <input type="text" name="DateOfBirth" />
+</p>
+
+<p style="color: blue">Giới tính</p>
+    <input type="radio" name="gender" style="color: black"/> Nam
+    <input type="radio" name="gender" style="color: black"/> Nữ
+
+
+<p style="color: blue">Địa chỉ
+    <input type="text" name="Address" style="width: 180px; height: 50px"/>
+</p>
+
+<p style="color: blue">Lớp
+
+    <select>
+        <option>- Chọn - </option>
+        <option> Lớp A </option>
+        <option> Lớp B </option>
+        <option> Lớp C </option>
+        <option> Lớp D </option>
+    </select>
+</p> <br>
+
+<p style="color: blue">Email
+    <input type="email" name="email" />
+</p>
+
+<p style="color: blue">Điện thoại
+    <input type="text" name="phone" />
+</p>
+
+<p>
+    <input type="button" name="Submit" value="Đăng ký"/>
+    <input type="reset" name="Reset" value="Nhập lại"/>
+</p>
+
+</body>
+
+</html>
