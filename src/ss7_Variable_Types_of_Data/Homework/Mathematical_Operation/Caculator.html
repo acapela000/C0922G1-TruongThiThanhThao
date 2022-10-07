@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+
+<body>
+<h2 style="color: hotpink">Caculator</h2>
+<table>
+    <tr>
+        <td>
+            <input type="number" id="value1" style="width: 100px; height: 20px; border-color: deeppink"/>
+        </td>
+        <td>
+            <input type="number" id="value2" style="width: 100px; height: 20px; border-color: deeppink"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input onclick="Addition()" type="button" style="width: 100px; height: 30px; border-radius: 20px; background-color: lightpink; color: green" value="Addition(+)"/>
+        </td>
+        <td>
+            <input onclick="Subtraction()" type="button" style="width: 100px; height: 30px; border-radius: 20px; background-color: lightpink; color: green" value="Subtraction(-)"/>
+        </td>
+        <td>
+            <input onclick="Multiplication()" type="button" style="width: 100px; height: 30px; border-radius: 20px; background-color: lightpink; color: green" value="Multiplication(x)"/>
+        </td>
+        <td>
+            <input onclick="Divition()" type="button" style="width: 100px; height: 30px; border-radius: 20px; background-color: lightpink; color: green" value="Divition(/)"/>
+        </td>
+    </tr>
+</table>
+<p>Result: <span id="result"></span></p>
+
+<script>
+    function Addition() {
+        let value1 = document.getElementById("value1").value;
+        let value2 = document.getElementById("value2").value;
+        let result = Number(value1) + Number(value2);
+            document.getElementById("result").innerHTML = result;}
+
+    function Subtraction() {
+        let value1 = document.getElementById("value1").value;
+        let value2 = document.getElementById("value2").value;
+        let result = Number(value1) - Number(value2);
+        document.getElementById("result").innerHTML = result;}
+
+    function Multiplication() {
+        let value1 = document.getElementById("value1").value;
+        let value2 = document.getElementById("value2").value;
+        let result = Number(value1) * Number(value2);
+        document.getElementById("result").innerHTML = result;}
+
+    function Divition() {
+        let value1 = document.getElementById("value1").value;
+        let value2 = document.getElementById("value2").value;
+        let result = Number(value1) / Number(value2);
+        document.getElementById("result").innerHTML = result;}
+</script>
+
+</body>
+
+</html>
