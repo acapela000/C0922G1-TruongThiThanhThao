@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check BMI</title>
+</head>
+
+<body>
+<script>
+    let weight = parseInt(prompt("Your weight is: (Unit: kg)"));
+    let height = parseInt(prompt("Your height is: (Unit: m)"));
+    let BMI = weight/(height*height);
+    if (BMI < 18.5) {
+        alert("You are Underweight");
+    }
+    else if (18.5 <= BMI == BMI < 25) {
+        alert("You are Normal");
+    }
+    else if (25 <= BMI == BMI < 30) {
+        alert("You are Overweight");
+    }
+    else alert("So sorry, you are Obese");
+
+</script>
+</body>
+
+</html>
