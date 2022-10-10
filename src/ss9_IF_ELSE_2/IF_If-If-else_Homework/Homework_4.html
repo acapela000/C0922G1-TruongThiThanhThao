@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 4</title>
+</head>
+
+<body>
+<script>
+    let a = parseInt(prompt("Input an integer a is: "));
+    let b = parseInt(prompt("Input an integer b is: "));
+    let c = parseInt(prompt("Input an integer c is: "));
+
+    if (a > b && a > c && b == c) {
+        document.write(a +" is the biggest among " + a + ", " + b + ", " + c);
+    }
+    else if (a > b && a < c) {
+        document.write(c +" is the biggest among " + a + ", " + b + ", " + c);
+    }
+    else if (b > c) {
+        document.write(b +" is the biggest among " + a + ", " + b + ", " + c);
+    }
+    else
+        document.write(c +" is the biggest among " + a + ", " + b + ", " + c);
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bonus rate depends on the benefit in a month</title>
+</head>
+
+<body>
+<script>
+    let benefit = parseInt(prompt("Input the benefit you got this month: ","10000000"));
+
+    if (benefit >= 10000000) {
+        document.write("Your bonus rate is at least 5%");
+    }
+    else if (8000000 <= benefit === benefit < 10000000) {
+        document.write("Your bonus rate is 4%");
+    }
+    else if (6000000 <= benefit === benefit < 8000000) {
+        document.write("Your bonus rate is 3%");
+    }
+    else if (4000000 <= benefit === benefit < 6000000) {
+        document.write("Your bonus rate is 2%");
+    }
+    else {
+        document.write("Your bonus rank is 1%");
+        alert("We hope you work harder");
+    }
+</script>
+
+</body>
+
+</html>
