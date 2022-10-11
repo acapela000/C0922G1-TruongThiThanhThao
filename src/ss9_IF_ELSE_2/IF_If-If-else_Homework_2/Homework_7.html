@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To solve the quadratic equation</title>
+</head>
+
+<body>
+
+<h3> Solve the quadratic equation: ax^2+bx+c=0 (a≠0) </h3>
+<script>
+    let a = parseInt(prompt("Input the figure of a"));
+    let b = parseInt(prompt("Input the figure of b"));
+    let c = parseInt(prompt("Input the figure of c"));
+    let x = b*b-4*a*c;
+    let y = -b/(2*a);
+    let z = Math.sqrt(x);
+    let x1 = (-b + z)/(2*a);
+    let x2 = (-b - z)/(2*a);
+
+    if (x < 0) {
+        alert ("There is no root for this quadratic!");
+    }
+    else if (x === 0) {
+        alert("There are two root for this quadratic, x1 = x2 = " + y);
+        document.write("x1 = x2 = " + y);
+    }
+    else if (x > 0) {
+        alert("There are two root for this quadratic!");
+        document.write("x1 = " + x1);
+        document.write("  ");
+        document.write("x2 = " + x2);
+    }
+
+</script>
+
+</body>
+
+</html>

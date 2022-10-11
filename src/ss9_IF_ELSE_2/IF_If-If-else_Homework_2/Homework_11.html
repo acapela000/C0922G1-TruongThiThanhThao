@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count the tax income</title>
+</head>
+
+<body>
+<h2> Bảng thuế suất </h2>
+
+<table border="2px" style="border-collapse: collapse; background-color: lightgoldenrodyellow">
+    <tr style="background-color: lightpink">
+        <th> Bậc thuế </th>
+        <th> Phần thu nhập tính thuế/năm (triệu đồng) </th>
+        <th> Phần thu nhập tính thuế/tháng (triệu đồng) </th>
+        <th> Thuế suất (%) </th>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"> 1 </td>
+        <td> Đến 60 </td>
+        <td> Đến 5 </td>
+        <td style="text-align: center"> 5 </td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"> 2 </td>
+        <td> Trên 60 đến 120 </td>
+        <td> Trên 5 đến 10 </td>
+        <td style="text-align: center"> 10 </td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"> 3 </td>
+        <td> Trên 120 đến 216 </td>
+        <td> Trên 10 đến 18 </td>
+        <td style="text-align: center"> 15 </td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"> 4 </td>
+        <td> Trên 216 đến 384 </td>
+        <td> Trên 18 đến 32 </td>
+        <td style="text-align: center"> 20 </td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"> 5 </td>
+        <td> Trên 384 đến 624 </td>
+        <td> Trên 32 đến 52 </td>
+        <td style="text-align: center"> 25 </td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"> 6 </td>
+        <td> Trên 624 đến 960 </td>
+        <td> Trên 52 đến 80 </td>
+        <td style="text-align: center"> 30 </td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"> 7 </td>
+        <td> Trên 960 </td>
+        <td> Trên 80 </td>
+        <td style="text-align: center"> 35 </td>
+    </tr>
+</table>
+<br>
+<button type="button" onclick="checkTax()" > Check My Tax </button>
+<p> Your tax fee is:  <span id="result"> </span>  </p>
+<script>
+    let answer = confirm("Your contract period is at least 3 months?");
+    let x = parseFloat(prompt("Input your income this year ('unit: triệu VND')"));
+    function checkTax() {
+        if (answer == true) {
+            if ( x <= 60 ) {
+                document.getElementById("result").innerText= x*0.05 + " triệu VND";
+            }
+            else if ( x > 60 && x <= 120 ) {
+                document.getElementById("result").innerText= x*0.1 + " triệu VND";
+            }
+            else if ( x > 120 && x <= 216 ) {
+                document.getElementById("result").innerText= x*0.15 + " triệu VND";
+            }
+            else if ( x > 216 && x <= 384 ) {
+                document.getElementById("result").innerText= x*0.2 + " triệu VND";
+            }
+            else if ( x > 384 && x <= 624 ) {
+                document.getElementById("result").innerText= x*0.25 + " triệu VND";
+            }
+            else if ( x > 624 && x <= 960 ) {
+                document.getElementById("result").innerText= x*0.3 + " triệu VND";
+            }
+            else {
+                document.getElementById("result").innerText= x*0.35 + " triệu VND";
+            }
+    }
+        else alert("Your contract's period is under 3 months or no contract so you dont have to pay the tax income");
+    }
+
+</script>
+
+</body>
+
+</html>

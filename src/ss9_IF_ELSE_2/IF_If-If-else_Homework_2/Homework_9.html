@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check the input number is a side of a triangle or not</title>
+</head>
+
+<body>
+<script>
+    let a = parseFloat(prompt("Input the figure of a"));
+    let b = parseFloat(prompt("Input the figure of b"));
+    let c = parseFloat(prompt("Input the figure of c"));
+
+    let x = a + b;
+    let y = a + c;
+    let z = b + c;
+
+    if ( a>0 && b>0 && c>0) {
+        if (x>c || y>b || z>a) {
+            alert("a, b, c is a side of a triangle");
+        }
+        else alert("a, b, c is not a side of a triangle");
+    }
+    else alert("a, b, c is not a side of a triangle");
+
+</script>
+</body>
+
+</html>

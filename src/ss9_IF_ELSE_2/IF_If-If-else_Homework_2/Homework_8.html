@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check an input number is an age of a person or not</title>
+</head>
+
+<body>
+<script>
+    let random_number = parseFloat(prompt("Input a random number"));
+    let x = Number.isInteger(random_number);
+
+    if (random_number > 0) {
+        if (random_number <120) {
+            if (!x) {
+                alert("Plz input an integer number");
+                document.write("Your age is " + prompt("Input again") + " years old!");
+            }
+        }
+        else alert("Plz input a number less than 120");
+             document.write("Your age is " + prompt("Input again") + " years old!");
+    }
+    else {
+        alert("Plz input a number bigger than 0");
+        document.write("Your age is " + prompt("Input again") + " years old!");
+    }
+
+</script>
+</body>
+
+</html>

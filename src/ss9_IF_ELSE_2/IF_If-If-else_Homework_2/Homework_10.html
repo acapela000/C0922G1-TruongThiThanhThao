@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How much electric you use and how much it cost you?</title>
+</head>
+
+<body>
+
+<script>
+    let kWh = parseFloat(prompt("Input your kWh you use this month"));
+
+    if (0 < kWh && kWh < 50) {
+        alert("Your unit price of electric is 1.484 VND(/kWh)");
+        document.write(kWh*1.484 + " VND");
+    }
+    else if (51 <= kWh && kWh < 100) {
+        alert("Your unit price of electric is 1.533 VND (/kWh)");
+        document.write(kWh*1.533 + " VND");
+    }
+    else if (101 <= kWh && kWh < 200) {
+        alert("Your unit price of electric is 1.786 VND (/kWh)");
+        document.write(kWh*1.786 + " VND");
+    }
+    else if (201 <= kWh && kWh < 300) {
+        alert("Your unit price of electric is 2.242 VND (/kWh)");
+        document.write(kWh * 2.242 + " VND");
+    }
+    else if (301 <= kWh && kWh < 400) {
+        alert("Your unit price of electric is 2.503 VND (/kWh)");
+        document.write(kWh * 2.503 + " VND");
+    }
+    else {
+        alert("Your unit price of electric is 2.587 VND (/kWh)");
+        document.write(kWh * 2.587 + " VND");
+    }
+
+</script>
+</body>
+
+</html>
