@@ -6,47 +6,19 @@
 </head>
 
 <body>
+
 <script>
 
-    let number = prompt("Input a number");
-    // console.log("num" + number);
-    // console.log("num" + number.slice(2,3));
-    // let trimNumber = 0, trimNumber1 = 1;
-    // let index = 0;
-    //     for (let i = 0; i < number.length - 1; i++) {
-    //         trimNumber = parseInt(number.slice(index, 1)) * 3;
-    //         console.log("trim0" +  trimNumber);
-    //         console.log("numSlice " +number.slice(index + 1, 1))
-    //         trimNumber1 = trimNumber + parseInt(number.slice(index + 1, 1));
-    //         console.log("trim1" +  trimNumber1);
-    //         if(index < (number.length -1)) {
-    //             index++;
-    //             console.log("end 1")
-    //         }
-    //     }
-    //     alert(trimNumber1)
-    //     if (trimNumber1 % 7 == 0) {
-    //         document.write(number + "la so chia het cho 7");
-    //     } else {
-    //         alert("NG")
-    //     }
-
-    if (!number || isNaN(+number) || !Number.isInteger(+number)) {
-        alert(`${number} ko chia het cho 7`);
-    } else {
-        let sum = 0;
-        for (let i = 0; i < number.length; i++) {
-            if (i !== number.length - 1) {
-                sum += +number[i];
-                sum *= 3;
-            } else {
-                sum += +number[i];
-            }
-        }
-
-        if (sum % 7 === 0) alert(`${number} chia het cho 7`);
+    let number = 0;
+    let sum = 0;
+    for (let i=0;i<30;i++) {
+        sum = sum + number;
+        number += 7 ;
     }
+    document.write("The sum of the first 30 positive integer is " + sum + "<br>");
+
 </script>
+
 </body>
 
 </html>

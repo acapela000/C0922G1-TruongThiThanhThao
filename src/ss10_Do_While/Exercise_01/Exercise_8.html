@@ -6,18 +6,32 @@
 </head>
 
 <body>
+<br><br>
+<h3> Guess the number </h3>
+<p> Click the button below to play game! </p>
+<button onclick="playGame()" style="border-radius: 30px; background-color: lightpink; width: 100px; height: 50px"> PLAY GAME </button>
 
 <script>
+    function playGame() {
+        let inputNumber = parseInt(prompt("Input amount of number you wanna guess"));
+        let randomNumber = parseInt(Math.random * inputNumber);
+        let guessNumber = parseInt(prompt("Input the number u guess"));
+        let count = 0;
 
-    for (let i=1;i<=100;i++) {
-        if (i % 3 == 0) {
-            document.write("Fizz" + "<br>");
-        } else if (i % 5 == 0) {
-            document.write("Buzz" + "<br>");
+        while (randomNumber==guessNumber) {
+            alert("Congratulation!! U r right");
+            break;
         }
-        else document.write(" " + i + "<br>");
+        while (count == 4) {
+            alert("Your guess time is over");
+            if (randomNumber<guessNumber) {
+             prompt("You need to guess a smaller number");
+                count++;
+            }   else if (randomNumber > guessNumber) {
+            prompt("You need to guess a bigger number");
+            }
+        }
     }
-
 </script>
 
 </body>

@@ -8,19 +8,18 @@
 <body>
 
 <script>
-    let sout;
-    sout = "<table border = '1' width = '300' cellspacing = '0' cellpadding='3'>"
-    for (i = 2; i <= 10; i++) {
-        sout = sout + "<tr>";
-        for (j = 1; j <= 9; j++) {
-            sout = sout  + "<td>" + i*(j+1) + "</td>";
+    let number = parseInt(prompt("Input a number"));
+    let count = 0;
+    let N = 2;
+
+    while (number>count) {
+        for () {
+        if (N%1==0 && N%N==0 && N%count==0) {
+            document.write("N is not a Prime number");}
+        else document.write("Prime number is " + (N-1) + "<br>");
         }
-        sout = sout + "</tr>";
-
-    }
-    sout = sout + "</table>";
-
-    document.write (sout);
+        N++;
+        count++; //????
 
 
 </script>
