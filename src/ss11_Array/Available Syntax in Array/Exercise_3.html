@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<a href="https://stackoverflow.com/questions/29719329/convert-array-into-upper-case"/>
+<a href="https://stackoverflow.com/questions/40192262/convert-uppercase-and-lowercase-in-javascript"/>
+<script>
+    /*Uppercase -> Lowercase and Reverse*/
+
+    let hello = "Look at me now . look at me now kkk";
+    let array = hello.split(" ");
+
+    alert(array);
+    let olleh = array.map(function (elem) {
+        return (elem[0].toLowerCase() + elem.substring(1,elem.length).toUpperCase());
+    });
+    alert (olleh.join());
+
+/*
+   for (let i=0; i<array.length; i++) {
+        let a = array[i];
+        if (a == a.toUpperCase())
+            a += a.toLowerCase();
+        else if (a == a.toLowerCase())
+            a += a.toUpperCase();
+    }
+    a = a.join(" ");
+    alert(a); //cannot run??*/
+
+/*
+    for (let i=0; i<array.length; i++) {
+        if (array[i] == array[i].toLowerCase())
+            array[i] = array[i].toUpperCase();
+
+        else if (array[i] == array[i].toUpperCase())
+                array[i] = array[i].toLowerCase();
+    }
+
+    array = array.join(" ");
+    alert(array); //Look AT ME NOW . LOOK AT ME NOW KKK?*/
+
+
+    /*change total character to uppercase*/
+    //let array = ["hIhI","HaHa","hOhO","KaKa","kEkE"];
+    //document.write(array.map(f=>{return f.toUpperCase();}));
+
+    //document.write(array.map(function (e) {return e.toUpperCase()}));
+
+/*
+    let array1 = String.prototype.toUpperCase.apply(array).split(",");
+    document.write(array1);*/
+
+/*
+    for (let i=0;i<array.length;i++) {
+        array[i] = array[i].toUpperCase();
+    } document.write(array);*/
+
+    //document.write(String(array).toUpperCase().split(","));
+
+</script>
+</body>
+
+</html>
