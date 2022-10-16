@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<p> We have numbers:-2,5,3,6,7,-1,-4,-5 </p>
+<p> Arrange from lowest to biggest number: </p>
+<script>
+    let array = [-2,5,3,6,7,-1,-4,-5];
+    function compareNumbers(a,b) {
+        return a- b;
+    }
+    document.write(array.sort(compareNumbers).join(", "));
+
+</script>
+</body>
+
+</html>

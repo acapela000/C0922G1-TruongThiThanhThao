@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<p> We have numbers:-2,5,3,6,7,-1,-4,-5 </p>
+<p> Find the negative number: </p>
+<!--<a href="https://stackoverflow.com/questions/44950233/javascript-get-only-negative-numbers-form-array"/>-->
+<script>
+    let array = [-2,5,3,6,7,-1,-4,-5];
+
+/*    function getNegativeNumbers (array) {
+        return array.filter(value => value < 0);
+    }
+     document.write(getNegativeNumbers(array));*/
+
+    let result = array.filter(function (number) {
+        return number < 0;
+    });
+    document.write(result);
+
+/*  function getNegativeNumbers (array) {
+        let negatives = [];
+        for (let i=0; i<array.length; i++) {
+            if (array[i]<0) {
+                negatives.push(array[i]);
+            }
+        }
+        return negatives;
+    }
+    document.write(getNegativeNumbers(array));*/
+
+</script>
+</body>
+
+</html>

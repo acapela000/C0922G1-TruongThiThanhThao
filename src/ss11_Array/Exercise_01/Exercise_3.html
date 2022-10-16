@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<p> We have chain:-2,5,3,6,8,-1,-4,-5 </p>
+<p> Find the max number in the chain and count the average of total number of chain </p>
+
+<script>
+    let array = [-2,5,3,6,8,-1,-4,-5];
+    let max = array[0];
+    let average = 0;
+
+    for (i=0; i<array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+            average = array.length/[i];
+        }
+    }
+    document.write("The maximum number in the chain is " + max + "<br>"+"<br>");
+    document.write("Average of total number of the chain is " + average) ;
+
+</script>
+</body>
+
+</html>
