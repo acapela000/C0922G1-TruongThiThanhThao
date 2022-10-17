@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+
+    //RIGHT Triangle
+    let a = 5;
+    let b = "";
+
+        for (let i=1; i<=a; i++) {
+            for (let j=0; j<a-i; j++) {
+                b += "&nbsp&nbsp";
+            }
+            for (let pos=0;pos<i; pos++) {
+                b += "*";
+            }
+            b += "<br>"; }
+        document.write(b);
+
+    document.write("<br>");
+    document.write("<br>");
+
+    let m = 5;
+    let n = "";
+
+    for (let i=1; i<=m; i++) {
+        for (let j=0; j<i; j++) {
+            n += "*";
+        } n += "<br>"; }
+    document.write(n);
+
+    document.write("<br>");
+    document.write("<br>");
+
+    let x = 5;
+    let string = "";
+    for (let i = 0; i < x; i++) {
+        for (let k = 0; k < x - i; k++) {
+            string += "*";
+        }
+        string += "<br>";
+    }
+    document.write(string);
+
+
+
+
+
+
+</script>
+</body>
+
+</html>
