@@ -6,14 +6,33 @@
 </head>
 
 <body>
+<h2> Input the amount of money you would like to borrow</h2>
+<p>(Unit: VND)</p>
+<input type="number" id="borrowMoney"/>
+
+<h2> Input the period (month) you would like to pay back </h2>
+<input type="number" id="periodMonth"/>
+
+<p> The rate of borrow money is 0.08%/year </p>
+<button onclick="checkMoney()"> CHECK </button>
+<p> The monthly money you have to pay is: <span id="result"></span> </p>
+<!--<button onclick="test()">Test</button>-->
 <script>
-    let confirm1 = confirm("Bạn gửi tiết kiệm có kỳ hạn hay không?")
-    if (confirm1==true) {
-     let period = parseFloat(prompt("input your period"));
-     let money = parseInt(prompt("input your saving at bank"));
+    // function test() {
+    //     alert(456);
+    // }
+    // alert(123);
+
+    function checkMoney() {
+        let money = parseInt(document.getElementById("borrowMoney").value);
+        let month = parseInt(document.getElementById("periodMonth").value);
+        let a = money / (month * 12);
+        let b = money * 0.08 / 12;
+        document.getElementById("result").innerText = a + b + " VND";
     }
 
 </script>
+
 </body>
 
 </html>
