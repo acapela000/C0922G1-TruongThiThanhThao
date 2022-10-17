@@ -11,8 +11,20 @@
 
 <script>
 
-    let chain = [-2, "hihi", 5, "hoho", 3, "haha"];
-    document.write("The chain after reverse is " + "'" + chain.reverse().toString().replaceAll(",","") + "'" + ".");
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+
+        for (let pos1 in a) {
+            document.write("row" + pos1 + "<br>");
+                for (let pos2 in a[pos1]) {
+                    document.write(a[pos1][pos2] + "<br>");
+            }
+        }
 
 
 

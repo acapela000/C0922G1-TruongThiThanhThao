@@ -7,16 +7,19 @@
 
 <body>
 
-<p> We have "Say hello to the beautiful world kkk, piupiu chiuchiu ❣❣❣" </p>
+<p> Piupiu chiuchiu ❣❣❣ </p>
 
 <script>
 
-    let array = ["Say hello to the beautiful world kkk, piupiu chiuchiu ❣❣❣"];
+    let ojt = [1, 2, 3, "a", "b", "c", 4, 5, 6, "d", "e", "f"]; //string, thêm [""] thì là Object
+    let count = 0;
 
-    function WordCount (array) {
-        return array.split(" ").length;
-    }
-    document.write(WordCount("Say hello to the beautiful world kkk, piupiu chiuchiu ❣❣❣"));
+    for (i=0; i<ojt.length; i++) {
+        if (typeof ojt[i] == "number") {
+            count += 1;
+        }
+    } document.write("The string above has " + count + " numbers");
+
 
 
 </script>

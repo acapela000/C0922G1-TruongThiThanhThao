@@ -7,13 +7,16 @@
 
 <body>
 
-<p> We have "Let","-","say","-","hi","-","to","-","me",'-',"kkk" </p>
+<p> We have "Say hello to the beautiful world kkk, piupiu chiuchiu ❣❣❣" </p>
 
 <script>
 
-    let array = ['-','Let',"-","say","-","hi","-","to","-","me",'-',"kkk"];
-    let a = array.toString();
-    document.write(a.replaceAll("-","_"));
+    let array = ["Say hello to the beautiful world kkk, piupiu chiuchiu ❣❣❣"];
+
+    function WordCount (array) {
+        return array.split(" ").length;
+    }
+    document.write(WordCount("Say hello to the beautiful world kkk, piupiu chiuchiu ❣❣❣"));
 
 
 </script>
