@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<form action="#">
+    <label for="word">
+        Write a word in English
+    </label>
+    <input type="text" name="word" value="" id="word">
+
+    <button onclick="translateEnglish()">
+        Translate
+    </button>
+</form>
+
+<p id="solution">
+</p>
+
+<footer>
+    <script>
+        let vietnamese = ["Hơi đói","Rất đói","Đói cồn cào"]
+        let english = ["Perkish", "Starving", "Ravenous"]
+
+        function translateEnglish() {
+            let word = document.getElementById("word").value.toString()
+            let pos = english.indexOf(word)
+
+            if (pos >= 0) {
+                document.getElementById("solution").innerHTML = vietnamese[pos]
+            } else {
+                document.getElementById("solution").innerHTML = "The word you type is not in our dictionary"
+            }
+        }
+    </script>
+</footer>
+
+</body>
+
+</html>
