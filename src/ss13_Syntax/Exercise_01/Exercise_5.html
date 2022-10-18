@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+<script>
+
+    let array1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let array2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function arrStar(inputStar) {
+        let result;
+        for (let i = 0; i < array1.length; i++) {
+            if (array1[i] == inputStar) {
+                result = array2[i];
+                break;
+            } else {
+                result = 'không có ngôi sao';
+            }
+        }
+        return result;
+    }
+
+
+    let inputStar = prompt('Input a name of a star');
+
+    document.write(arrStar(inputStar));
+
+</script>
+
+
+</body>
+</html>
