@@ -10,15 +10,17 @@
 
 <script>
 
+    let inputNum = parseInt(prompt('Input anything'));
+    let a = false;
 
-    function sqrNum(x) {
-        let result = x*x ;
-        return result;
+    function checkNumber (inputNum) {
+        let x = console.log(inputNum);
+
+        if (x != "number") {
+            alert(a);
+        } else alert(true);
     }
-
-    let x = prompt('nhập x');
-    document.write(sqrNum(x));
-
+    document.write(checkNumber(inputNum));
 </script>
 
 
