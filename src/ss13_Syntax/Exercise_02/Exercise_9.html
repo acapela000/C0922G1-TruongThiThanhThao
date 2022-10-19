@@ -5,19 +5,43 @@
     <title>Title</title>
 </head>
 
-
 <body>
+
+<form>
+    <label for="input1"> Input a random string </label><br>
+    <label> (can be string of characters or numbers or symbols, etc)</label><br>
+    <input type="text" name="number" id="input1"/><br>
+
+    <label for="input2"> Input random thing </label><br>
+    <label>(should be a character or a number or a symbol, etc)</label><br>
+    <input type="text" name="number" id="input2"/>
+
+    <button type="button" onclick="thisButton()"> Let's check</button>
+</form>
+
+<br><br>
+Result:<span id="result"> </span>
 
 <script>
 
+    function thisButton() {
+        let a = document.getElementById("input1").value;
+        let b = document.getElementById("input2").value;
 
-    function sqrNum(x) {
-        let result = x*x ;
-        return result;
+        function checkInput (a,b) {
+           let aSplit = a.split('');
+           let count = 0;
+
+           for (i=0; i<a.length; i++) {
+               if (aSplit[i] == b) {
+                   count++;
+                   return count;
+               }
+           } return -1;
+        }
+        document.getElementById("result").innerHTML =
+            ("The time is " + checkInput(a,b) )
     }
-
-    let x = prompt('nhập x');
-    document.write(sqrNum(x));
 
 </script>
 

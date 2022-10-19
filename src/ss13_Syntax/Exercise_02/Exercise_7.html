@@ -7,17 +7,40 @@
 
 
 <body>
+<label for="inputNum1">
+    Input the first integer a
+</label><br>
+<input type="number" name="number" id="inputNum1"/><br>
+
+<label for="inputNum2">
+    Input the second integer b
+</label><br>
+<input type="number" name="number" id="inputNum2"/>
+
+<button type="button" onclick="thisButton()"> Start Reverse </button>
+</form>
+
+<br><br>
+Result:<span id="result"> </span>
 
 <script>
 
+    function thisButton() {
+        let a = parseInt(document.getElementById("inputNum1").value);
+        let b = parseInt(document.getElementById("inputNum2").value);
 
-    function sqrNum(x) {
-        let result = x*x ;
-        return result;
+        function exchangePos (a,b) {
+            let str = [];
+            let strRev;
+
+            str.push(a,b);
+            strRev = str.reverse();
+        return strRev;
+            }
+        document.getElementById("result").innerHTML =
+            "The position of a and b after reverse is " + exchangePos (a,b);
     }
 
-    let x = prompt('nhập x');
-    document.write(sqrNum(x));
 
 </script>
 

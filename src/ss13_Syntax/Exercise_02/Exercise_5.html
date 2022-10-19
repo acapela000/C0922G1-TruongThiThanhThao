@@ -8,16 +8,47 @@
 
 <body>
 
+<form>
+    <label for="intNum1">
+        Input three random integer
+    </label>
+
+    <label for="intNum2"> </label>
+    <label for="intNum3"> </label> <br>
+
+    <input type="text" name="number" id="intNum1"/> <br>
+    <input type="text" name="number" id="intNum2"/> <br>
+    <input type="text" name="number" id="intNum3"/>
+
+    <button type="button" onclick="thisButton()"> Check </button>
+
+</form>
+<br>
+Result:<span id="result"> </span>
+<!--<div id="result"> </div>-->
+
 <script>
 
+    function thisButton() {
+        let x1 = parseInt(document.getElementById("intNum1").value);
+        console.log("x1" + x1)
+        let x2 = parseInt(document.getElementById("intNum2").value);
+        console.log("x2" +x2)
+        let x3 = parseInt(document.getElementById("intNum3").value);
+        console.log("x3" +x3)
 
-    function sqrNum(x) {
-        let result = x*x ;
-        return result;
+
+        function findMaxNum (x1,x2,x3) {
+            let max = x1;
+            if (x2>x1 && x2>=x3) {
+                max = x2;
+            } else if (x3>x1)
+                max = x3;
+          return max;
+        }
+        document.getElementById("result").innerHTML = " " + findMaxNum(x1,x2,x3) ;
     }
 
-    let x = prompt('nhập x');
-    document.write(sqrNum(x));
 
 </script>
 

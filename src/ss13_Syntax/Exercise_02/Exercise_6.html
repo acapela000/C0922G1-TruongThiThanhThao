@@ -8,19 +8,32 @@
 
 <body>
 
+<form>
+    <label for="inputNum">
+        Input a random integer
+    </label>
+
+    <input type="number" name="number" id="inputNum"/>
+    <button type="button" onclick="thisButton()"> Check </button>
+
+</form>
+
+Result: <span id="result"> </span>
+
 <script>
 
+    function thisButton() {
+        let x = parseFloat(document.getElementById("inputNum").value);
+        function findPositiveInt (x) {
+            if (x>0) {
+                return true;
+            } else return false;
+        }
 
-    function sqrNum(x) {
-        let result = x*x ;
-        return result;
+    document.getElementById("result").innerHTML = findPositiveInt(x);
     }
 
-    let x = prompt('nhập x');
-    document.write(sqrNum(x));
-
 </script>
-
 
 </body>
 

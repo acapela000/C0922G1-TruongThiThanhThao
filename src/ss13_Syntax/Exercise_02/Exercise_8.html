@@ -7,17 +7,32 @@
 
 
 <body>
+<label for="inputNum">
+    Input a string of integer
+</label><br>
+<input type="number" name="number" id="inputNum"/><br>
+
+<button type="button" onclick="thisButton()"> Start Reverse </button>
+</form>
+
+<br><br>
+Result:<span id="result"> </span>
 
 <script>
 
-
-    function sqrNum(x) {
-        let result = x*x ;
-        return result;
+    function thisButton() {
+        let str = document.getElementById("inputNum").value;
+        function reverseString (str) {
+            let strSplit = str.split(''); //turn a string into an array
+            let strAfterRev;
+            strAfterRev = strSplit.reverse();
+            return strAfterRev.join(''); //turn the array into a string
+        }
+        document.getElementById("result").innerHTML =
+            "The position of a and b after reverse is " + reverseString(str);
     }
 
-    let x = prompt('nhập x');
-    document.write(sqrNum(x));
+
 
 </script>
 

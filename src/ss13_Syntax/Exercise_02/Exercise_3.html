@@ -10,20 +10,20 @@
 
 <script>
 
-    let pos = parseInt(prompt('Input a number'));
-    let facNum;
+    let randomNum = parseInt(prompt('Input a number'));
 
-    function factorial (pos) {
-        if (pos == 1 || pos == 0) {
+    function factorial (num) {
+        if (num == 1 || num == 0) {
             return 1;
         } else {
-        for (let i = 0; i <= pos; i++) {
-            facNum = pos * pos[i];
+            let facNum = 1;
+            for (let i = 1; i <= num; i++) {
+                facNum = facNum * i;
+            }
             return facNum;
         }
-        }
     }
-    document.write(factorial(facNum));
+    document.write(factorial(randomNum));
 
 </script>
 

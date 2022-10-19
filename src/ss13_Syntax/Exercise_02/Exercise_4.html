@@ -9,18 +9,20 @@
 <body>
 
 <script>
+    //everything gets from 'prompt' is always a string
 
-    let inputNum = parseInt(prompt('Input anything'));
-    let a = false;
+    let inputNum = prompt('Input anything');
 
-    function checkNumber (inputNum) {
-        let x = console.log(inputNum);
-
-        if (x != "number") {
-            alert(a);
-        } else alert(true);
+    function checkNumber (num) {
+        if (!isNaN(num)) {
+            alert(true);
+            return "The input in4mation is a number";
+        } else alert(false);
+            return "The input in4mation is not a number";
     }
     document.write(checkNumber(inputNum));
+
+
 </script>
 
 
