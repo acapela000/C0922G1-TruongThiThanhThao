@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<p><b> Add New Product </b></p>
+<table>
+    <tr>
+        <th>
+            <input type="text" name="name_Product" id="nameProduct"
+                   placeholder="New Product"
+                   style="border-radius: 5px;
+                   width: 150px;
+                   height: 50px;
+                   border-color: forestgreen;
+                   font-size: larger;
+                   border-width: 1px;">
+        </th>
+        <th>
+            <button type="button" onclick="addMore()"
+                    style="cursor:pointer;color: white;
+                    border-radius: 5px;
+                    border-width: 1px;
+                    width: 50px;
+                    height: 50px;
+                    font-size: larger;
+                    border-color: forestgreen;
+                    background-color: forestgreen"> Add </button>
+        </th>
+    </tr>
+</table> <br>
+
+
+<p><b> Display All Product </b></p>
+<p>
+<span id="listOfProduct"> </span>
+</p>
+<script>
+
+    let add = [];
+
+    function addMore() {
+        let inputProct = document.getElementById("nameProduct").value;
+        add.push(inputProct);
+
+        document.getElementById("listOfProduct").innerHTML =
+            "<br>"  +
+            add.join("<input type='checkbox' name='checkBox'/>" +
+            "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+            "<button type=\"button\" onclick=\"editName()\"\n" +
+                "        style=\"cursor:pointer;color: white;\n" +
+                "        border-radius: 5px;\n" +
+                "        border-width: 1px;\n" +
+                "        width: 50px;\n" +
+                "        height: 50px;\n" +
+                "        font-size: larger;\n" +
+                "        border-color: forestgreen;\n" +
+                "        background-color: forestgreen\"> Edit </button>" +
+            "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+            "<button type=\"button\" onclick=\"deleteProduct()\"\n" +
+                "        style=\"cursor:pointer;color: white;\n" +
+                "        border-radius: 5px;\n" +
+                "        border-width: 1px;\n" +
+                "        width: 70px;\n" +
+                "        height: 50px;\n" +
+                "        font-size: larger;\n" +
+                "        border-color: forestgreen;\n" +
+                "        background-color: forestgreen\"> Delete </button><br>"
+            ) ;
+    }
+
+    function editName() {
+        // let inputProct = document.getElementById("nameProduct").value;
+
+        function editInput (add) {
+            // for (let i=0;i<add.length;i++) {
+            //     if (inputProct == add[i]) {
+            //         add.splice(i,1,inputProct);
+                    return add;
+                }
+        document.getElementById("listOfProduct").innerHTML = "<br>"
+            + editInput(add).join("<br>") ;
+    }
+
+    function deleteProduct() {
+      //  let inputProct = document.getElementById("nameProduct").value;
+
+        function deleteInput (add) {
+            // for (let i=0;i<add.length;i++) {
+            //     if (inputProct == add[i]) {
+            //         add.splice(i,1);
+                    return add;
+                }
+        document.getElementById("listOfProduct").innerHTML = "<br>" + deleteInput(add).join("<br>") ;
+    }
+
+
+
+
+
+</script>
+</body>
+
+
+</html>

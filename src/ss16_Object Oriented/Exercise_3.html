@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+        isEmpty() {
+            if (this.weight <= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        decrease() {
+            this.weight--;
+        }
+    }
+    class Human {
+        constructor(name,weight,male) {
+            this.name = name;
+            this.weight = weight;
+            this.male = male;
+        }
+        checkApple(apple) {
+            if (apple.isEmpty()) {
+                document.write("Ăn hết táo rồi" + '<br>')
+            } else {
+                document.write("Táo còn ăn được."+'<br>')
+            }
+        }
+        eat(apple) {
+            if (apple.isEmpty()) {
+                document.write(" hết táo rồi "+ '<br>')
+            } else {
+                document.write(this.name + " ăn táo " +'<br>');
+                this.weight++;
+                apple.decrease();
+            }
+        }
+    }
+    let apple = new Apple(10);
+    let adam = new Human("Adam",60,'men',);
+    let eva = new Human("Eva",50,'women',);
+    adam.checkApple(apple);
+    for (let i=0;i<=10;i++) {
+        if(i%2!==0) {
+            eva.eat(apple);
+            document.write('cân nặng của eva:' + eva.weight + '<br>');
+            document.write('cân nặng của táo: ' + apple.weight + '<br>');
+        }else {
+            adam.eat(apple);
+            document.write('cân nặng của adam:' + adam.weight + '<br>');
+            document.write('cân nặng của táo: ' + apple.weight + '<br>');
+        }
+    }
+</script>
+</body>
+</html>
