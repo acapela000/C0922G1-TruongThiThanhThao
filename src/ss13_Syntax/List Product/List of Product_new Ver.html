@@ -6,51 +6,49 @@
 </head>
 
 <body>
-<p><b> Add New Product </b></p>
-<table>
-    <tr>
-        <th>
-            <input type="text" name="name_Product" id="nameProduct"
-                   placeholder="New Product"
-                   style="border-radius: 5px;
-                   width: 150px;
-                   height: 50px;
-                   border-color: forestgreen;
-                   font-size: larger;
-                   border-width: 1px;">
-        </th>
-        <th>
-            <button type="button" onclick="addMore()"
-                    style="cursor:pointer;color: white;
-                    border-radius: 5px;
-                    border-width: 1px;
-                    width: 50px;
-                    height: 50px;
-                    font-size: larger;
-                    border-color: forestgreen;
-                    background-color: forestgreen"> Add </button>
-        </th>
-    </tr>
-</table> <br>
+<h2><b> Add New Product </b></h2>
+<input type="text" name="name_Product" id="nameProduct"
+       placeholder="New Product"
+       style="border-radius: 5px;
+       width: 150px;
+       height: 50px;
+       border-color: forestgreen;
+       font-size: larger;
+       border-width: 1px;">
+<button type="button" onclick="addMore()"
+        style="cursor:pointer;color: white;
+        border-radius: 5px;
+        border-width: 1px;
+        width: 50px;
+        height: 50px;
+        font-size: larger;
+        border-color: forestgreen;
+        background-color: forestgreen"> Add </button>
 
 
 <p><b> Display All Product </b></p>
 <p>
-<span id="listOfProduct"> </span>
+<table id="listOfProducts">
+</table>
 </p>
 <script>
 
-    let add = [];
+    let products = [];
 
-    function addMore() {
-        let inputProct = document.getElementById("nameProduct").value;
-        add.push(inputProct);
 
-        document.getElementById("listOfProduct").innerHTML =
-            "<br>"  +
-            add.join("<input type='checkbox' name='checkBox'/>" +
-            "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
-            "<button type=\"button\" onclick=\"editName()\"\n" +
+    function printTable() {
+        let productsHTML = ""
+
+        products.forEach(function(element, pos){
+            let color = ""
+            if(pos%2==0){
+                color = "#D3D3D3"
+            }
+
+            productsHTML = productsHTML +
+                "<tr style=\"background-color:"+color+"\">"+
+                "<td>"+element+"</td>"+
+                "<td><button type=\"button\" onclick=\"editName("+pos+")\"\n" +
                 "        style=\"cursor:pointer;color: white;\n" +
                 "        border-radius: 5px;\n" +
                 "        border-width: 1px;\n" +
@@ -58,9 +56,8 @@
                 "        height: 50px;\n" +
                 "        font-size: larger;\n" +
                 "        border-color: forestgreen;\n" +
-                "        background-color: forestgreen\"> Edit </button>" +
-            "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
-            "<button type=\"button\" onclick=\"deleteProduct()\"\n" +
+                "        background-color: forestgreen\"> Edit </button></td>"+
+                "<td><button type=\"button\" onclick=\"deleteProduct("+pos+")\"\n" +
                 "        style=\"cursor:pointer;color: white;\n" +
                 "        border-radius: 5px;\n" +
                 "        border-width: 1px;\n" +
@@ -68,33 +65,31 @@
                 "        height: 50px;\n" +
                 "        font-size: larger;\n" +
                 "        border-color: forestgreen;\n" +
-                "        background-color: forestgreen\"> Delete </button><br>"
-            ) ;
+                "        background-color: forestgreen\"> Delete </button></td>"+
+                "</tr>"
+        })
+
+        document.getElementById("listOfProducts").innerHTML = productsHTML
     }
 
-    function editName() {
-        // let inputProct = document.getElementById("nameProduct").value;
+    function addMore() {
+        let inputProct = document.getElementById("nameProduct").value;
+        products.push(inputProct);
 
-        function editInput (add) {
-            // for (let i=0;i<add.length;i++) {
-            //     if (inputProct == add[i]) {
-            //         add.splice(i,1,inputProct);
-                    return add;
-                }
-        document.getElementById("listOfProduct").innerHTML = "<br>"
-            + editInput(add).join("<br>") ;
+        printTable()
     }
 
-    function deleteProduct() {
-      //  let inputProct = document.getElementById("nameProduct").value;
+    function editName(position) {
+        let newName = prompt("Type the new name of the element")
+        products[position] = newName
 
-        function deleteInput (add) {
-            // for (let i=0;i<add.length;i++) {
-            //     if (inputProct == add[i]) {
-            //         add.splice(i,1);
-                    return add;
-                }
-        document.getElementById("listOfProduct").innerHTML = "<br>" + deleteInput(add).join("<br>") ;
+        printTable()
+    }
+
+    function deleteProduct(position) {
+        products.splice(position, 1)
+
+        printTable()
     }
 
 

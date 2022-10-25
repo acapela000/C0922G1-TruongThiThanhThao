@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Thao = {
+        name: {
+            first: "Truong",
+            last: "Thao",
+        },
+        age: 29,
+        hobby: ['bouldering', ' snowboarding'],
+        introduction: function () {
+            alert('Hi, my name is ' + this.name.last + ' and I`m ' + this.age + ' years old')
+        },
+        interest: function () {
+            alert('My hobbies are ' + this.hobby[1] + ' and nice to meet u all');
+        }
+    }
+
+    Thao.introduction();
+    Thao.interest();
+    console.log(Thao.name.first);
+    console.log(Thao['name']['first']);
+    console.log(Thao.hobby[1]); //-> snowboarding
+
+    Thao['age'] = 25;
+    Thao.name.last = 'Charlie'
+    console.log(Thao['age'], Thao['name']['last']);
+    Thao['legs'] = 'very long';
+    Thao['eyes'] = 'look like sunshine';
+    Thao.routine = function () {
+        console.log('wake up and eat and sleep');
+    }
+    console.log('Thao is ', Thao.age, 'and Thao have eyes ', Thao.eyes, 'with', Thao.legs, 'legs. Finally Thao`s routine is ', Thao.routine());
+    // why Thao.routine() is undefined??
+
+    let myDataName = 'Shu';
+    console.log(typeof myDataName)
+    let myDataValue = 'Xinh';
+    Thao[myDataName] = [myDataValue];
+    Thao.myDataName = myDataValue; // console.log(Thao.Shu) -> undefined;
+    console.log(Thao.Shu);
+
+    let person1 = {
+        name: 'Brick',
+        age: 31,
+        greeting: function () {
+            alert('Hi, my name is ' + this.name + 'I`m ' + this.age)
+        }
+    }
+
+    let person2 = {
+        name: 'Richard',
+        age: 30,
+        greeting: function () {
+            alert('Hello, my name is ' + this.name + 'I`m ' + this.age)
+        }
+    }
+    person1.greeting();
+    console.log(person1.name);
+    console.log(person2.name);
+
+    // 3 way to make an object in Javascript
+    //Cách này tốn bộ nhớ nếu tạo nhiều đối tượng cùng có getInfo
+    /*function Apple(type) {
+        this.type = type;
+        this.color = 'red';
+        this.getInfo = function () {
+            return this.color + ' ' + this.type + 'apple';
+        };
+    }*/
+    //Cách dùng prototype ít tiêu tốn bộ nhớ hơn
+    function Apple(type) {
+        this.type = type;
+        this.color = 'red';
+    }
+    Apple.prototype.getInfo = function () {
+            return this.color + ' ' + this.type + 'apple';
+        }
+        Apple.color = 'white'
+        console.log(Apple.color) //-> white
+
+
+
+
+   /* var o = new F();
+    o.constructor === F
+    console.log(o)*/
+
+
+//_________________________________________________________________
+    /*module.exports = {
+        sum_even_numbers
+    };
+
+    function sum_even_numbers() {
+        var sum = 0;
+
+        for (let i = 0; i <= 1000; i++) {
+
+            if (i % 2 == 0) {
+                sum += i ;
+            }
+        } return sum;
+    }
+    console.log(sum_even_numbers());*/
+
+
+ /*  //  function iterArr(arr) {
+   //      var sum = 0;
+   //      let array = [];
+   //      for (let i=0; i<array.length; i++) {
+   //          sum = sum + array[i];
+   //      }
+   //      return sum;
+   //  }*/
+
+
+ /*  // //  let array  = [1, 5, 8]
+   // // console.log( array.indexOf(0)); //-> result=-1
+   // //  console.log( array.indexOf(1) ); //-> result=0*/
+
+
+/*   // //  var arr = [1, 66, 20];
+   // //  arr.length = 0;
+   // //  console.log(arr[0]); //-> undefined*/
+
+
+  /* //  function sum_odd_5000() {
+   //      var sum = 0;
+   //      for (let i = 0; i <= 5000; i++) {
+   //          if (i % 2 != 0) {
+   //              sum += i ;
+   //          }
+   //      }
+   //      return sum;
+   //  } console.log(sum_odd_5000());*/
+
+
+
+/*   //  for (let i = 0; i <arr.length; i++) {
+   //      if (arr[i] > max) {
+   //          max = arr[i] ;
+   //      }
+   //  }*/
+
+
+/*   //  let arr = [];
+   //  let sum = 0;
+   //  let avg = 0;
+   //  for (let i = 0; i <arr.length; i++) {
+   //      sum =  sum + arr[i];
+   //      avg = sum/arr.length ;
+   //  }*/
+
+
+/*    function maxMinAvg(arr) {
+
+        var max = -9999;
+        let min = 9999;
+        let sum = 0;
+
+        for (let i = 0; i <arr.length; i++) {
+            sum += arr[i];
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+            if (min > arr[i]) {
+                min = arr[i];
+            }
+        }
+        let avg = sum/arr.length;
+        let arrnew = [max,min,avg];
+        return arrnew;
+    }
+    console.log(maxMinAvg(arr));*/
+
+    function swap(arr) {
+        let temp = arr[0];
+        arr[0] = arr[arr.length-1];
+        arr[arr.length-1] = temp;
+        return arr;
+    }
+
+/*        //cách code này ko đúng khi i = 1 -> ktra các giá trị của arr
+    function swap(arr) {
+        let arrnew = [];
+        let temp = arr[0];
+        for (let i = 0;i<arr.length;i++) {
+            arr[i] = arr[arr.length-1];
+            arr[arr.length-1] = temp;
+            arrnew = temp;
+        }
+        return arrnew;
+    }*/
+
+
+/*
+    // for(var x = 2; x < 8; x++)
+    // {
+    //     console.log(x);
+    // }
+*/
+
+ /*   // msg = 'codegym';
+    // for(var x = 6; x < msg.length + 2; x++)
+    // {
+    //     console.log(x);
+    // }*/
+
+
+/*    // for(var x = 19; x > 4; x--)
+    // {
+    //     console.log(x);
+    //     break;
+    // }*/
+
+/*    // var msg = 'gym';
+    // if(msg != 'gym')
+    // {
+    //     console.log('code' + msg);
+    // }
+    // else
+    // {
+    //     console.log('coder' + msg);
+    // }*/
+
+
+/*    // var x = 10;
+    // if( x != 10)
+    // {
+    //     console.log(x);
+    // }
+    // else
+    // {
+    //     console.log('hello');
+    // }*/
+
+
+
+/*    // msg = 'hello!';
+    // for(var x =15; x > msg.length + 4; x--)
+    // {
+    //     console.log(x);
+    // }*/
+
+
+/*    msg = 'codegym';
+    for(var x = 4; x < msg.length + 1; x++)
+    {
+        if(msg.length == 3)
+        {
+            for (var i = 2; i < 7; i++)
+            {
+                console.log(i);
+            }
+        }
+        else
+        {
+            for (var i = msg.length;  i > (msg.length - 3); i--)
+            {
+                console.log(i);
+            }
+        }
+    }*/
+
+
+
+/*    var x = 2;
+    var y = [1,2,3,4,5];
+    var z = [6,7,8,9,10,11];
+
+    if(y[x] + z[x-1] == z[x+2])
+    {
+        console.log('Codegym');
+    }
+    else
+    {
+        console.log('Agilead');
+    }*/
+
+
+    /*    function test(...args) {
+        console.log(typeof args); //-> object
+    }
+    test(12);
+
+    const obj1 = {Name: "Hello", Age: 16};
+    const obj2 = {Name: "Hello", Age: 16};
+    alert(obj1 === obj2); // -> false*/
+
+
+
+</script>
+</body>
+</html>

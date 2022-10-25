@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+    let Circle = function (radius) {
+        this.getArea = function () {
+            return radius*radius*3.144;
+        }
+        this.getPerimeter = function () {
+            return 2*radius*3.144;
+        }
+    }
+
+    let circle = new Circle (4);
+    let area = circle.getArea();
+    let perimeter = circle.getPerimeter();
+
+    console.log(area);
+    console.log(perimeter);
+
+
+
+
+</script>
+</body>
+</html>
