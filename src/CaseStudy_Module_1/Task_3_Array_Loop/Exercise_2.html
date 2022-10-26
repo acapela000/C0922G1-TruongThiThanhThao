@@ -6,12 +6,54 @@
 </head>
 
 <body>
+
+
+<form for="inputInteger1">
+    <label style="font-size: larger">
+        Input the first array of integer.<br>
+        Example: 2,3,-5,6
+    </label> <br>
+    <input type="text" name="num" id="inputInteger1" style="width: 320px; height: 20px" >
+</form> <br>
+
+<form for="inputInteger2">
+    <label style="font-size: larger">
+        Input the second array of integer.
+    </label> <br>
+    <input type="text" name="num" id="inputInteger2" style="width: 320px; height: 20px">
+    <button type="button" onclick="checkInput()"> Check! </button>
+</form> <br>
+
+<b><p id="result" style="font-size: larger"> Result </p></b>
+
+
 <script>
 
+    function checkInput () {
+        let array1 = document.getElementById("inputInteger1").value;
+        let array2 = document.getElementById("inputInteger2").value;
+        let differentNumber = [];
+        let i,j;
+        for (i=0; i<array1.length; i++) {
+            let foundNum = false;
 
+            for (let j=0; j<array1.length; j++) {
+                if (array1[i] == array2[j]) {
+                    array1 = array2.split().splice(j,1);
+                    foundNum = true;
+                }
+            }
+            if (foundNum == false) {
+                differentNumber.push(array1[i]);
+            }
+        }
+        document.getElementById('result').innerHTML =
+            'The different number between the two array is: ' + differentNumber.push(array1[i]);
+    }
 
 
 </script>
+
 </body>
 
 </html>

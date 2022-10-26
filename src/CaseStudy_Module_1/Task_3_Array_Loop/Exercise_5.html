@@ -6,8 +6,80 @@
 </head>
 
 <body>
+<h3> WELCOME TO OUR COFFEE SHOP </h3>
+<table>
+    <tr><th> Menu </th></tr>
+    <tr> <td> 1. Cafe </td></tr>
+    <tr> <td> 2. Orange juice </td></tr>
+    <tr> <td> 3. Carrot juice  </td></tr>
+    <tr> <td> 4. Tomato Juice </td></tr>
+    <tr> <td> 5. Water </td></tr>
+    <tr> <td> 6. Coconut juice </td></tr>
+    <tr> <td> 7. End the order </td></tr>
+</table><br>
+
+<form for="orderDrink">
+    <label>
+        Please input the number of order u choose!
+    </label><br>
+    <input type="text" name="order" id="orderDrink">
+    <button type="button" onclick="chooseOrder()"> Order! </button>
+</form><br>
+
+<form for="orderQuantity">
+    <label>
+        Please input the quantity of drink!
+    </label><br>
+    <input type="number" name="order" id="orderQuantity">
+    <button type="button" onclick="chooseQuantity()"> Check bill! </button>
+</form>
+
+<p id="result"> Your order cost: </p>
+
 <script>
 
+    let cost = 0;
+    function chooseOrder() {
+        let order = document.getElementById('orderDrink').value;
+        let yes_no = confirm('Your oder is ' + order);
+        //let cost = 0;
+
+        if (order == 1) {
+            cost = 15000;
+        }
+        if (order == 2) {
+            cost = 30000;
+        }
+        if (order == 3) {
+            cost = 25000;
+        }
+        if (order == 4) {
+            cost = 25000;
+        }
+        if (order == 5) {
+            cost = 12000;
+        }
+        if (order == 6) {
+            cost = 20000;
+        }
+        if (order == 7) {
+            alert('See u again');
+        }
+        if (yes_no == false) {
+            alert('Please confirm your order');
+        } else alert('Your order drink is ' + order + ' and it takes ' + cost + ' VND!');
+        alert('Please input the quatity');
+    }
+
+    function chooseQuantity() {
+        let quantity = document.getElementById('orderQuantity').value;
+        let count = 0;
+        for (let i=0;i<100;i++) {
+            if (quantity>100 || quantity<0) {
+                alert('Please input the quantity is no bigger than 100');
+            } else count = quantity*cost;
+        } document.getElementById('result').innerHTML = 'Your order cost ' + count + ' VND!';
+    }
 
 
 

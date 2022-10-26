@@ -6,7 +6,46 @@
 </head>
 
 <body>
+
+<form for="inputNum">
+    <label>
+        Input a string of number.
+    </label><br>
+    <input type="number" name="number" id="inputNum">
+    <button type="button" onclick="convert()"> Convert! </button>
+</form>
+
+<p id="result"> Your input is written in word is: </p>
+
 <script>
+    //1234
+    function convert() {
+        let input = document.getElementById("inputNum").value;
+        let num_word = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
+        let convert_num = [];
+        let i,j;
+        let foundDifferent;
+
+        for (i=0; i<input.length; i++) {
+            let foundNum = false;
+
+            for (let j=0; j<num_word.length; j++) {
+                if (input[i] == num_word[j]) {
+                    foundNum = true;
+                }
+            }
+            if (foundNum == false) {
+                foundDifferent = differentNumber.push(array2.split('').splice(j,1));
+            }
+        }
+        document.getElementById('result').innerHTML =
+            'The different number between the two array is: ' + foundDifferent;
+
+/*        let a1 = [1,2,3].
+        let a2 = [3,4,1].toString()
+        if (a1 == a2) {
+            alert ('OK')
+        } else alert('NO');*/
 
 
 
