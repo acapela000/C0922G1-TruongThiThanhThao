@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<form for="countSalary">
+    <label>
+        Input your salary this month
+    </label>
+    <input type="number" name="salary" id="countSalary">
+    <button type="button" onclick="checkTax()"> Check Tax </button>
+</form>
+
+<p><span id="result"> The tax u have to pay is: </span></p>
+
+<script>
+
+    function checkTax() {
+        let salary = document.getElementById("countSalary").value;
+        let tax = 0;
+        if (salary < 7000000) {
+            tax = (salary*5)/100;
+        } else if (7000000 <= salary && salary <= 15000000) {
+            tax = (salary*10)/100;
+        } else tax = (salary*20)/100;
+        document.getElementById('result').innerHTML=
+            'The tax u have to pay is: ' + tax + ' VND.';
+    }
+
+
+</script>
+
+</body>
+</html>
