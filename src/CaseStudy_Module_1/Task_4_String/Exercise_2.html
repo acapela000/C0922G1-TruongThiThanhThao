@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
+
 <body>
-$END$
+
+<form for="inputChar">
+    <label style="font-size: larger">
+        Input a string of character or symbol, ect.
+    </label> <br>
+    <input type="text" name="char" id="inputChar" style="width: 320px; height: 20px" >
+    <button type="button" onclick="checkInput()"> Check! </button>
+</form> <br>
+
+<b><p id="result" style="font-size: larger"> </p></b>
+
+<script>
+
+    function checkInput () {
+        let array = document.getElementById("inputChar").value;
+        let onlyOneChar = [];
+
+        for (let i=0; i<array.length; i++) {
+            let foundChar = false;
+
+            for (let j=0; j<onlyOneChar.length; j++) {
+                if (array[i] == onlyOneChar[j]) {
+                    foundChar = true;
+                }
+            }
+            if (foundChar == false) {
+
+                onlyOneChar.push(array[i]);
+            }
+        }
+        document.getElementById('result').innerHTML =
+            'The number of different character in the input array is: ' + onlyOneChar.length;
+    }
+
+
+
+</script>
+
 </body>
+
 </html>
