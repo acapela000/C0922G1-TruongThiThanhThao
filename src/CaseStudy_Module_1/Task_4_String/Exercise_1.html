@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form for="case">
+    <label>
+        Input the string in wrong way.<br>
+        Exp: hUyNh tHaNh tRUonG.
+    </label><br>
+    <input type="text" name="changeCase" id="case">
+    <button type="button" onclick="convertCase()"> Convert! </button>
+
+</form>
+
+<p id="result"> The case after converted  </p>
+
+<script>
+    function convertCase() {
+        let inputCase = document.getElementById('case').value;
+        let splitCase = inputCase.toLowerCase().split(" ");
+        let joinCase;
+        let maxLengthOfWord = 0;
+        let lengthestWord;
+
+        function lowerUpperCase() {
+            for (let i = 0; i < splitCase.length; i++) {
+                if (maxLengthOfWord < splitCase[i].length) {
+                    maxLengthOfWord = splitCase[i].length;
+                    lengthestWord = splitCase[i].toUpperCase();
+                }
+                splitCase[i] = splitCase[i][0].toUpperCase() + splitCase[i].slice(1);
+                joinCase = splitCase.join(' ');
+            }
+            return "The case after converted is '" + joinCase + "' and" +
+            " The lengthest word is '" + lengthestWord + "' with " + maxLengthOfWord + ' of characters';
+        }
+        document.getElementById('result').innerHTML = lowerUpperCase() + '.';
+    }
+
+</script>
+
+
+</body>
+</html>

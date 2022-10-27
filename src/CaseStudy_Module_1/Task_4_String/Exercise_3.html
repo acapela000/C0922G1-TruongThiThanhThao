@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form for="string1">
+    <label>
+        Input a string.
+        Exp: abbccdd.
+    </label><br>
+    <input type="text" name="checkWord" id="string1">
+</form>
+<form for="string2">
+    <label>
+        Input a string.
+        Exp: bcbcaadaa.
+    </label><br>
+    <input type="text" name="checkWord" id="string2">
+    <button type="button" onclick="checkCommonChar()"> Check! </button>
+
+</form>
+
+<p id="result"> The common character between two string is  </p>
+
+<script>
+
+    function checkCommonChar () {
+        let array1 = document.getElementById('string1').value;
+        let arr1 = array1.split('');
+        let array2 = document.getElementById('string2').value;
+        let arr2 = array2.split('');
+        let common = [];
+
+            for (let i = 0; i < arr1.length; i++) {
+                let UnfoundChar = false;
+                for (let j = 0; j < arr2.length; j++) {
+                    if (arr1[i] != arr2[j]) {
+                        UnfoundChar = true;
+                    }
+                }
+                if (UnfoundChar == false) {
+                    common.push(arr1[i]);
+                }
+        }
+        document.getElementById('result').innerHTML =
+            'The common character between two string is ' + common;
+    }
+
+</script>
+
+</body>
+</html>
