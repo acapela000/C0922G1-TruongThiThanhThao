@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
+
 <body>
-$END$
+
+<form for="number1">
+    <label>
+        Input a random number.
+        Exp: 3
+    </label><br>
+    <input type="number" name="checkNum" id="number1">
+</form>
+<form for="number2">
+    <label>
+        Input a random number.
+        Exp: 4
+    </label><br>
+    <input type="number" name="checkNum" id="number2">
+    <button type="button" onclick="checkMaxMin()"> Check! </button>
+
+</form>
+
+<p id="result"> </p>
+
+<script>
+
+    function checkMaxMin() {
+        let n_row = document.getElementById('number1').value;
+        let m_column = document.getElementById('number2').value;
+        let array = [] // 2d arr = [[1,2],[2,4]]
+        let max = 0;
+        let min = 9999;
+
+        for (let i=0; i<n_row; i++) {
+            array[i] = [];
+            for (let j = 0; j < m_column; j++) {
+                array[i][j] = Math.floor(Math.random() * 11);
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                }
+                if (array[i][j] < min) {
+                    min = array[i][j];
+                }
+            }
+        }
+        document.getElementById('result').innerHTML = 'Max is ' + max + ' and Min is ' + min;
+    }
+
+
+</script>
 </body>
 </html>

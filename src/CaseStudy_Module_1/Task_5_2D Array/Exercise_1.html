@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
+
 <body>
-$END$
+<form for="number1">
+    <label>
+        Input a random number.
+        Exp: 3
+    </label><br>
+    <input type="number" name="checkNum" id="number1">
+</form>
+<form for="number2">
+    <label>
+        Input a random number.
+        Exp: 4
+    </label><br>
+    <input type="number" name="checkNum" id="number2">
+    <button type="button" onclick="checkEvenNum()"> Check! </button>
+
+</form>
+
+<p id="result"> The total even number in the 2D array is  </p>
+
+<script>
+    function checkEvenNum() {
+        let n_row = document.getElementById('number1').value;
+        let m_column = document.getElementById('number2').value;
+        let array = [];
+        let countEvenNum = 0;
+
+        for (let i=0; i<n_row; i++) {
+            array[i] = [];
+            for (let j = 0; j < m_column; j++) {
+                array[i][j] = Math.floor(Math.random() * 11);
+                //console.log(array[i][j]);
+                if (array[i][j] % 2 == 0) {
+                    countEvenNum++;
+
+                } //else alert('')
+            }
+        }
+        console.log(array)
+        document.getElementById('result').innerHTML =
+            'The total of even number in the 2D array is ' + countEvenNum;
+    }
+
+
+</script>
 </body>
+
+
 </html>

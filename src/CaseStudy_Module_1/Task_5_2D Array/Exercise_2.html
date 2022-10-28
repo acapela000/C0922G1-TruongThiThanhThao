@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<form for="number1">
+    <label>
+        Input a random number.
+        Exp: 3
+    </label><br>
+    <input type="number" name="checkNum" id="number1">
+</form>
+<form for="number2">
+    <label>
+        Input a random number.
+        Exp: 4
+    </label><br>
+    <input type="number" name="checkNum" id="number2">
+    <button type="button" onclick="checkPrime()"> Check! </button>
+
+</form>
+
+<p id="result">  </p>
+
+<script>
+    function checkPrime() {
+        let n_row = document.getElementById('number1').value;
+        let m_column = document.getElementById('number2').value;
+        let array = [];
+        let arrayPrimeNum = [];
+        let countPrimeNum = 0;
+
+        for (let i=0; i<n_row; i++) {
+            array[i] = [];
+
+            for (let j = 0; j < m_column; j++) {
+                array[i][j] = Math.floor(Math.random() * 20 + 1);
+                let numberOfDivisible = 0;
+
+                for (let z=1; z<=array[i][j]; z++) {
+                    if (array[i][j] % z == 0) {
+                        numberOfDivisible += 1;
+                    }
+                }
+                if (numberOfDivisible <= 2) {
+                    arrayPrimeNum.push(array[i][j]);
+                    countPrimeNum++;
+                }
+            }
+        }
+        document.getElementById('result').innerHTML =
+            'Prime number is ' + arrayPrimeNum + ' and total of it is ' + countPrimeNum + '.'
+    }
+</script>
+
 </body>
 </html>
