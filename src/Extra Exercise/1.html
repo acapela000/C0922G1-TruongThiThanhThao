@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+    let input = prompt('Input some integer');
+    let inputSplit = input.split(',');
+    let oddArr = [];
+    let sum = 0;
+    let avg = 0;
+    let max = -9999;
+    let min = 9999;
+    let posOfMin = 0;
+    let sqr = 0;
+    let countSqrNum = 0;
+    let primeArr = input.split(',')
+    let primeArr_ = [];
+    let checkNum = 0;
+    let minusNumArr = input.split(',');
+    let removeMinusArr = input.split(',');
+    let ascending = 0;
+    let ascArr = input.split(',');
+    //4,-5,9,7,3
+     for (let i=0; i<=inputSplit.length; i++) {
+
+         if (inputSplit[i]*1%2 != 0 && i%2 == 0) {
+             oddArr.push(inputSplit[i]);
+             sum = sum + inputSplit[i]*1;
+             avg = sum/oddArr.length;
+         }
+         if (inputSplit[i]>max) {
+             max = inputSplit[i];
+         }
+         if (inputSplit[i]<min) {
+             min = inputSplit[i];
+             posOfMin = i;
+         }
+         sqr = Math.sqrt(inputSplit[i]);
+         if (sqr*sqr == inputSplit[i]) {
+             countSqrNum++;
+         }
+         if (primeArr[i]>0) {
+             if (primeArr[i - 1] % i == 0) {
+                 checkNum++;
+                 if (checkNum <= 2) {
+                     primeArr_.push(primeArr[i]);
+                 }
+             }
+         }
+         if (minusNumArr[i]<0) {
+             minusNumArr.splice(i,1,0);
+         }
+         if (removeMinusArr[i]<0) {
+             removeMinusArr.splice(i,1);
+         }
+         if (ascArr[i]>ascArr[i+1]) {
+             ascending = ascArr[i];
+             ascArr[i] = ascArr[i+1];
+             ascArr[i+1] = ascending;
+         }
+
+     }
+     document.write('(1)The average of the odd numbers whose positions is even is ' +avg+ '<br>');
+     document.write('(2)The max number is ' +max+ '<br>');
+     document.write('(3)The position of the min number is ' +posOfMin+ '<br>');
+     document.write('(4)The numbers of square number: ' +countSqrNum+ '<br>');
+     document.write('(5)The prime numbers: ' +primeArr_+ '<br>')
+     document.write('(6)After replace the minus numbers to 0, the array is ' +minusNumArr+ '<br>');
+     document.write('(7)After remove the minus numbers, the array is ' +removeMinusArr+ '<br>')
+     document.write('(8)The ascending of original/input array is ' + ascArr);
+
+</script>
+
+
+
+</body>
+
+</html>

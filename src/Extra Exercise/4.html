@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+    let input = prompt('Input some integer, ex: 2,3,-1,5,8,-4');
+    let inputSplit = input.split(',');
+    let array1= [];
+    let array2 = [];
+
+    if (inputSplit.length%2 == 0) {
+        array2 = inputSplit.splice((inputSplit.length/2),(inputSplit.length/2));
+        array1 = inputSplit;
+    }
+    document.write('The original input is ' +input+ '.' +"<br>");
+    document.write('After divided the array into two part: ' + "<br>");
+    document.write(' + The first array is: ' +array1+ '.' +"<br>");
+    document.write(' + The second array is: ' +array2+ '.');
+
+</script>
+</body>
+
+</html>

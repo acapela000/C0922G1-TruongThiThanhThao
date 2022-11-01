@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+    let input = null;
+    let inputSplit;
+    let countEven = 0;
+    let countOdd = 0;
+
+    do {
+        input = prompt('Input some integer, ex: 2,3,-1,6,-5');
+        inputSplit = input.split(',');
+    }
+    while (inputSplit != "")
+    {
+        for (let i = 0; i < inputSplit.length; i++) {
+            if (inputSplit[i] % 2 == 0) {
+                countEven += 1;
+            } else countOdd += 1;
+        }
+    }
+        document.write('The numbers of even number in the array is ' +countEven+ "<br>");
+        document.write('The numbers of odd number in the array is ' + countOdd);
+
+
+
+
+</script>
+</body>
+</html>

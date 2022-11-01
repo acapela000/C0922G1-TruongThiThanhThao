@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+    let input = prompt('Input an string of character, ex: abnmhufnhg');
+    let inputSplit = input.split('');
+
+    for (let i=0; i<inputSplit.length; i++) {
+        for (let j=i+1; j<inputSplit.length-1; j++) {
+            if (inputSplit[i] == inputSplit[j]) {
+                prompt('Input string has duplicate character, plz input again');
+                //inputSplit.splice(i,1);
+            }
+        }
+    }
+    //document.write('The array after removed duplicate characters is ' + inputSplit);
+
+</script>
+</body>
+
+</html>

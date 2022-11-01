@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+    let input = prompt('Input some integer, ex: 2,3,-1,6,-5');
+    let inputSplit = input.split(',');
+    let evenArr = [];
+    let oddArr = [];
+
+    for (let i=0; i<inputSplit.length; i++) {
+        if (inputSplit[i]%2 == 0) {
+            evenArr.push(inputSplit[i]);
+        } else oddArr.push(inputSplit[i]);
+    }
+    document.write('Even array is ' +evenArr+ "<br>");
+    document.write('Odd array is ' + oddArr);
+
+
+
+</script>
+</body>
+</html>
